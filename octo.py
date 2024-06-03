@@ -37,9 +37,10 @@ class DataProcessor:
             consumption_dataframe = pd.DataFrame(consumption_data)
             sorted_reverse_dataframe = consumption_dataframe.sort_values(by='interval_start', ascending=False)
             print(sorted_reverse_dataframe.head(5))
+        except KeyError as e:
+            print("Empty dataset returned")
         except Exception as e:
             print("Error:", e)
-
 
 load_dotenv()
 
